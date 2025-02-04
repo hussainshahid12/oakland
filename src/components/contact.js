@@ -1,29 +1,86 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "../assets/logoAbout.svg";
 import Image3 from "../assets/image3.svg";
 import Footer from "./Footer";
+import { Link } from "react-router-dom";
 
-const contact = () => {
+const Contact = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  // Optional: close the menu when clicking outside
+  const closeMenu = () => setIsMenuOpen(false);
   return (
     <>
-      <div className="  px-[30px]  sm:px-[100px] bg-[rgba(244,244,244,1)] h-[640px] flex flex-col  gap-[300px] ">
-        <div className="flex justify-between">
+      <div className="px-[30px] sm:px-[100px] bg-[rgba(244,244,244,1)] h-[640px] flex flex-col gap-[270px]">
+        {/* Navbar Section */}
+        <div className="flex justify-between items-center py-6">
           <div>
-            <img src={logo} className="py-[26px]  " alt="logo" />
+            <img src={logo} className="py-[26px]" alt="logo" />
           </div>
-          <div className="flex  gap-[30px] items-center text-[18px] font-[400px] leading-[25px] hidden lg:flex">
-            <p className="cursor-pointer mt-2 hover:underline">About us</p>
-            <p className="cursor-pointer mt-2 hover:underline">Services</p>
-            <p className="cursor-pointer mt-2 hover:underline">Portfolio</p>
-            <p className="cursor-pointer bg-black text-white px-[40px] py-[11px] rounded-full mt-2">
-              Contact
-            </p>
+          {/* Desktop Menu */}
+          <div className="flex gap-[30px] items-center text-[18px] font-[400px] leading-[25px] hidden lg:flex">
+            <Link to="/about">
+              <p className="cursor-pointer mt-2 hover:underline">About us</p>
+            </Link>
+            <Link to="/services">
+              <p className="cursor-pointer mt-2 hover:underline">Services</p>
+            </Link>
+            <Link to="/portfolio">
+              <p className="cursor-pointer mt-2 hover:underline">Portfolio</p>
+            </Link>
+            <Link to="/contact">
+              <p className="cursor-pointer bg-black text-white px-[40px] py-[11px] rounded-full mt-2">
+                Contact
+              </p>
+            </Link>
+          </div>
+
+          {/* Hamburger Menu (Mobile) */}
+          <div className="lg:hidden flex items-center">
+            <button onClick={toggleMenu} className="text-black">
+              <i
+                className={`fa ${isMenuOpen ? "fa-times" : "fa-bars"} text-3xl`}
+              ></i>
+            </button>
           </div>
         </div>
 
+        {/* Mobile Menu */}
+        {isMenuOpen && (
+          <div
+            className="lg:hidden absolute top-0 left-0 w-full bg-black bg-opacity-75 text-white p-6 flex flex-col items-center space-y-6 z-20"
+            onClick={closeMenu} // Close the menu when clicking outside
+          >
+            <Link to="/about" onClick={closeMenu}>
+              <p className="cursor-pointer text-[18px] hover:underline">
+                About us
+              </p>
+            </Link>
+            <Link to="/services" onClick={closeMenu}>
+              <p className="cursor-pointer text-[18px] hover:underline">
+                Services
+              </p>
+            </Link>
+            <Link to="/portfolio" onClick={closeMenu}>
+              <p className="cursor-pointer text-[18px] hover:underline">
+                Portfolio
+              </p>
+            </Link>
+            <Link to="/contact" onClick={closeMenu}>
+              <p className="cursor-pointer bg-black text-white px-[40px] py-[11px] rounded-full mt-2">
+                Contact
+              </p>
+            </Link>
+          </div>
+        )}
+
+        {/* Page Content */}
         <div>
-          <h1 className="text-[64px] leading-[77.44px font-[400]]">
-            {" "}
+          <h1 className="text-[64px] leading-[77.44px] font-[400]">
             Contact us
           </h1>
           <p className="mt-[48px] max-w-[535px] leading-[25px] text-[18px] font-[400]">
@@ -145,4 +202,4 @@ const contact = () => {
   );
 };
 
-export default contact;
+export default Contact;

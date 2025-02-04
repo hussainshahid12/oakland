@@ -1,5 +1,6 @@
 import React from "react";
 import footerImage from "../assets/image9.svg";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -31,7 +32,9 @@ const Footer = () => {
           <div>
             <ul className="text-18 font-400 text-white  flex flex-col gap-4">
               <li className="text-[21px]">Legal</li>
-              <li>Privacy and Cookies Policy</li>
+              <Link to="/privacyPolicy">
+                <li>Privacy and Cookies Policy</li>
+              </Link>
               <li>Termos e Condições</li>
             </ul>
           </div>
