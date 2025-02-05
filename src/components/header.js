@@ -15,7 +15,7 @@ const Header = () => {
     <div className="container-fluid">
       <div className="grid grid-cols-1 lg:grid-cols-2">
         <div className="bg-[rgba(33,37,41,1)] px-4 sm:px-6 md:px-10 w-full">
-          <div className="flex flex-col h-full justify-between">
+          <div className="flex flex-col h-[85%] justify-between">
             {/* Mobile Menu Toggle */}
             <div className="lg:hidden absolute top-6 right-6 flex items-center justify-between w-[50px] h-[50px] z-50">
               {/* Hamburger Icon - Show when mobile menu is closed */}
@@ -73,14 +73,16 @@ const Header = () => {
 
             {/* Content Section */}
             <div>
-              <img
-                src={logo}
-                className="py-[26px] px-6 md:px-[100px]"
-                alt="logo"
-              />
+              <Link to="/">
+                <img
+                  src={logo}
+                  className="py-[26px] px-6 md:px-[100px]"
+                  alt="logo"
+                />
+              </Link>
             </div>
 
-            <div className="py-[26px] px-6 sm:px-8 md:px-[100px] flex flex-col gap-12">
+            <div className="py-[26px] px-6 sm:px-8 md:px-[100px] flex flex-col gap-12  ">
               <h1 className="text-white text-2xl md:text-[64px] text-[32px] sm:text-[48px] w-full sm:w-[292px] leading-[77.44px]">
                 Redefining Energy
               </h1>

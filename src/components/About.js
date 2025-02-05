@@ -20,7 +20,9 @@ const About = () => {
         {/* Navbar Section */}
         <div className="flex justify-between items-center py-6">
           <div>
-            <img src={logo} className="py-[26px]" alt="logo" />
+            <Link to="/">
+              <img src={logo} className="py-[26px]" alt="logo" />
+            </Link>
           </div>
           {/* Desktop Menu */}
           <div className="flex gap-[30px] items-center text-[18px] font-[400px] leading-[25px] hidden lg:flex">
