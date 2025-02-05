@@ -81,7 +81,7 @@ const Portfolio = () => {
         />
 
         {/* Fixed Navbar */}
-        <div className="flex justify-between items-center relative z-10  mt-[23px]">
+        <div className="flex justify-between items-center relative z-10  mt-[10px]">
           <div>
             <Link to="/">
               <img src={logo} className="py-[26px]" alt="Logo" />

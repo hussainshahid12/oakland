@@ -17,7 +17,7 @@ const Contact = () => {
     <>
       <div className="px-[30px] sm:px-[100px] bg-[rgba(244,244,244,1)] h-[640px] flex flex-col gap-[270px]">
         {/* Navbar Section */}
-        <div className="flex justify-between items-center py-6">
+        <div className="flex justify-between items-center">
           <div>
             <Link to="/">
               <img src={logo} className="py-[26px]" alt="logo" />{" "}
