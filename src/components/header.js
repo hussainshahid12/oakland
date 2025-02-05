@@ -76,7 +76,7 @@ const Header = () => {
               <Link to="/">
                 <img
                   src={logo}
-                  className="py-[26px] px-6 md:px-[100px]"
+                  className="py-[26px] px-6 md:px-[100px] lg:mt-[20px]"
                   alt="logo"
                 />
               </Link>
@@ -121,7 +121,7 @@ const Header = () => {
           />
 
           {/* Desktop Menu Items */}
-          <div className="absolute top-10 left-1/2 transform -translate-x-1/2 flex gap-3 md:gap-6 lg:gap-8 text-white w-full justify-center items-center hidden lg:flex">
+          <div className="absolute top-10 left-1/2 transform -translate-x-1/2 flex gap-3 md:gap-6 lg:gap-8 text-white w-full justify-end items-center hidden lg:flex   pe-[100px]">
             <Link to="/about">
               {" "}
               <p className="cursor-pointer mt-2 hover:underline">About Us</p>
